@@ -1,11 +1,18 @@
 omega = θ
 gamma = γ
 
-p1 * p1 = x * x + y * y
-p2 * p2 = (x + A2) * (x + A2) + (x + B2) * (x + B2)
-p3 * p3 = (x + A3) * (x + A3) + (x + B3) * (x + B3)
+ p1 * p1 = (x * x + y * y)
+ p2 * p2 = (( x + A2 ) * ( x + A2 ) + ( x + B2 ) * ( x + B2 ))
+ p3 * p3 = (( x + A3 ) * ( x + A3 ) + ( x + B3 ) * ( x + B3 ))
+ A2 = (L3 * cos(θ) - x1)
+ B2 = (L3 * sin(θ))
+ A3 = (L2 * (cos(θ) * cos(γ) - sin(θ) * sin(γ)) - x2)
+ B3 = (L2 * (cos(θ) * cos(γ) - sin(θ) * sin(γ)) - y2)
 
-A2 = L3 * cos(θ) - x1
-B2 = L3 * sin(θ)
-A3 = L2 * (cos(θ) * cos(γ) - sin(θ) * sin(γ)) - x2
-B3 = L2 * (cos(θ) * cos(γ) - sin(θ) * sin(γ)) - y2
+
+D = 2 * ( A2 * B3 - B2 * A3)
+
+N1 = B3 * ( p2 * p2 - p1 * p1 - A2 * A2 - B2 * B2 ) - B2 * ( p3 * p3 - p1 * p1 - A3 * A3 - B3 * B3 )
+= (L2 * (cos(θ) * cos(γ) - sin(θ) * sin(γ)) - y2)* ( ((x + A2) * (x + A2) + (x + B2) * (x + B2))- (x * x + y * y)- (L3 * cos(θ) - x1)* (L3 * cos(θ) - x1)- (L3 * sin(θ))* (L3 * sin(θ))) - (L3 * sin(θ))* ( ((x + A3) * (x + A3) + (x + B3) * (x + B3))- (x * x + y * y)- (L2 * (cos(θ) * cos(γ) - sin(θ) * sin(γ)) - x2)* (L2 * (cos(θ) * cos(γ) - sin(θ) * sin(γ)) - x2)- (L2 * (cos(θ) * cos(γ) - sin(θ) * sin(γ)) - y2)* (L2 * (cos(θ) * cos(γ) - sin(θ) * sin(γ)) - y2))
+
+N2 = - A3 * ( p2 * p2 - p1 * p1 - A2 * A2 - B2 * B2) + A2 * (p3 * p3 - p1 * p1 - A3 * A3 - B3 * B3 )
