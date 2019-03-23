@@ -42,15 +42,15 @@ function plot_poses()
         B3 = BB3 - y2;
         
         printf("Pose %d\n", i)
-        printf("Given p1 = %f\n", p1)
+        % printf("Given p1 = %f\n", p1)
         pp1 = sqrt(x_list(i)**2 + y_list(i)**2);
         printf("Our calculated p1 = %f\n", pp1)
-        printf("Given p2 = %f\n", p2)
+        % printf("Given p2 = %f\n", p2)
         pp2 = sqrt(pp1**2 + 2*A2*x_list(i) + 2*B2*y_list(i) + A2**2 + B2**2);
-        printf("Our calculated p1 = %f\n", pp2)
-        printf("Given p3 = %f\n", p3)
+        printf("Our calculated p2 = %f\n", pp2)
+        % printf("Given p3 = %f\n", p3)
         pp3 = sqrt(pp1**2 + 2*A3*x_list(i) + 2*B3*y_list(i) + A3**2 + B3**2);
-        printf("Our calculated p1 = %f\n", pp3)
+        printf("Our calculated p3 = %f\n", pp3)
         printf("========================\n")
     endfor
 endfunction
